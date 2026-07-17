@@ -1,0 +1,83 @@
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <!-- LOGO -->
+
+        <a href="/" class="logo">
+
+            <i class="fa-solid fa-plane"></i>
+
+            <span>Airport Security AI</span>
+
+        </a>
+
+
+        <!-- CENTER NAVIGATION -->
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="/"
+                   class="{% if request.path == '/' %}active{% endif %}">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="/about"
+                   class="{% if request.path == '/about' %}active{% endif %}">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="/analytics"
+                   class="{% if request.path == '/analytics' %}active{% endif %}">
+                    Analytics
+                </a>
+            </li>
+
+            <li>
+                <a href="/detection"
+                   class="{% if request.path == '/detection' %}active{% endif %}">
+                    Detection
+                </a>
+            </li>
+
+            <li>
+                <a href="/history"
+                   class="{% if request.path == '/history' %}active{% endif %}">
+                    History
+                </a>
+            </li>
+
+        </ul>
+
+
+        <!-- SYSTEM STATUS -->
+
+        <div class="nav-right">
+
+            <div class="status">
+
+                <span class="status-dot"></span>
+
+                <span>System Online</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- MOBILE BUTTON -->
+
+        <div class="menu-toggle">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </div>
+
+    </div>
+
+</nav>

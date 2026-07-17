@@ -1,0 +1,742 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- =====================================================
+     HERO SECTION
+===================================================== -->
+
+<section class="pro-hero">
+
+    <!-- Background Effects -->
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow hero-glow-one"></div>
+    <div class="hero-glow hero-glow-two"></div>
+
+    <!-- LEFT CONTENT -->
+    <div class="pro-hero-left" data-aos="fade-right">
+
+        <div class="hero-badge">
+            <span class="badge-pulse"></span>
+            <i class="fa-solid fa-shield-halved"></i>
+            AI POWERED SECURITY SYSTEM
+        </div>
+
+        <h1 class="hero-main-title">
+            AI Airport
+            <span>Security</span>
+        </h1>
+
+        <h2 class="hero-sub-title">
+            Deep Learning Based
+            <span>X-ray Contraband Detection</span>
+        </h2>
+
+        <p class="hero-description">
+            Intelligent airport baggage screening platform capable of
+            detecting prohibited objects from X-ray baggage images using
+            custom-trained YOLO object detection models.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="/detection" class="pro-btn-primary">
+                <i class="fa-solid fa-play"></i>
+                <span>Start Detection</span>
+                <i class="fa-solid fa-arrow-right btn-arrow"></i>
+            </a>
+
+            <a href="/analytics" class="pro-btn-secondary">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>View Analytics</span>
+            </a>
+
+        </div>
+
+        <!-- MINI METRICS -->
+
+        <div class="hero-mini-stats">
+
+            <div class="mini-stat">
+                <span class="mini-value">4</span>
+                <span class="mini-label">Models Evaluated</span>
+            </div>
+
+            <div class="mini-divider"></div>
+
+            <div class="mini-stat">
+                <span class="mini-value">12</span>
+                <span class="mini-label">Object Classes</span>
+            </div>
+
+            <div class="mini-divider"></div>
+
+            <div class="mini-stat">
+                <span class="mini-value">2.2 ms</span>
+                <span class="mini-label">Fastest Inference</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         RIGHT SIDE - AI DETECTION CONSOLE
+    ================================================== -->
+
+    <div class="pro-hero-right" data-aos="fade-left">
+
+        <div class="detection-console">
+
+            <!-- Console Header -->
+
+            <div class="console-header">
+
+                <div class="console-title">
+
+                    <span class="console-live-dot"></span>
+
+                    <div>
+                        <strong>AI Detection Engine</strong>
+                        <small>Real-time X-ray Analysis</small>
+                    </div>
+
+                </div>
+
+                <div class="console-status">
+                    LIVE
+                </div>
+
+            </div>
+
+
+            <!-- SCANNER DISPLAY -->
+
+            <div class="scanner-display">
+
+                <div class="scanner-grid"></div>
+
+                <div class="scanner-radar">
+                    <div class="radar-circle radar-circle-one"></div>
+                    <div class="radar-circle radar-circle-two"></div>
+                    <div class="radar-circle radar-circle-three"></div>
+
+                    <div class="radar-center">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                </div>
+
+
+                <!-- Detection Target 1 -->
+
+                <div class="detection-target target-one">
+
+                    <span class="target-corner top-left"></span>
+                    <span class="target-corner top-right"></span>
+                    <span class="target-corner bottom-left"></span>
+                    <span class="target-corner bottom-right"></span>
+
+                    <span class="target-label">
+                        OBJECT
+                    </span>
+
+                </div>
+
+
+                <!-- Detection Target 2 -->
+
+                <div class="detection-target target-two">
+
+                    <span class="target-corner top-left"></span>
+                    <span class="target-corner top-right"></span>
+                    <span class="target-corner bottom-left"></span>
+                    <span class="target-corner bottom-right"></span>
+
+                </div>
+
+
+                <!-- Scanning Beam -->
+
+                <div class="scan-beam"></div>
+
+
+                <!-- Floating Data -->
+
+                <div class="scanner-data data-one">
+                    <span>MODEL</span>
+                    <strong>YOLO11n</strong>
+                </div>
+
+                <div class="scanner-data data-two">
+                    <span>STATUS</span>
+                    <strong>READY</strong>
+                </div>
+
+            </div>
+
+
+            <!-- CONSOLE FOOTER -->
+
+            <div class="console-footer">
+
+                <div class="console-metric">
+
+                    <span>MODEL</span>
+
+                    <strong>
+                        YOLO11n
+                    </strong>
+
+                </div>
+
+                <div class="console-divider"></div>
+
+                <div class="console-metric">
+
+                    <span>CLASSES</span>
+
+                    <strong>
+                        12
+                    </strong>
+
+                </div>
+
+                <div class="console-divider"></div>
+
+                <div class="console-metric">
+
+                    <span>SPEED</span>
+
+                    <strong>
+                        2.2 ms
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Floating Card -->
+
+        <div class="floating-ai-card">
+
+            <div class="floating-icon">
+                <i class="fa-solid fa-microchip"></i>
+            </div>
+
+            <div>
+                <span>AI ENGINE</span>
+                <strong>System Ready</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TECHNOLOGY STRIP
+===================================================== -->
+
+<section class="tech-strip">
+
+    <div class="tech-strip-label">
+        POWERED BY
+    </div>
+
+    <div class="tech-item">
+        <i class="fa-brands fa-python"></i>
+        Python
+    </div>
+
+    <div class="tech-item">
+        <i class="fa-solid fa-brain"></i>
+        Deep Learning
+    </div>
+
+    <div class="tech-item">
+        <i class="fa-solid fa-eye"></i>
+        Computer Vision
+    </div>
+
+    <div class="tech-item">
+        <i class="fa-solid fa-crosshairs"></i>
+        YOLO Detection
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FEATURES SECTION
+===================================================== -->
+
+<section class="pro-features">
+
+    <div class="section-heading" data-aos="fade-up">
+
+        <span class="section-tag">
+            PLATFORM CAPABILITIES
+        </span>
+
+        <h2>
+            Intelligent Security Screening
+        </h2>
+
+        <p>
+            A unified platform for X-ray image analysis,
+            prohibited object detection, performance analytics,
+            and detection history.
+        </p>
+
+    </div>
+
+
+    <div class="pro-feature-grid">
+
+
+        <div class="pro-feature-card"
+             data-aos="fade-up">
+
+            <div class="feature-number">
+                01
+            </div>
+
+            <div class="pro-feature-icon">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+
+            <h3>
+                Fast Detection
+            </h3>
+
+            <p>
+                Lightweight YOLO models provide rapid inference
+                for airport baggage X-ray screening.
+            </p>
+
+            <div class="feature-line"></div>
+
+        </div>
+
+
+        <div class="pro-feature-card"
+             data-aos="fade-up"
+             data-aos-delay="100">
+
+            <div class="feature-number">
+                02
+            </div>
+
+            <div class="pro-feature-icon">
+                <i class="fa-solid fa-crosshairs"></i>
+            </div>
+
+            <h3>
+                Object Detection
+            </h3>
+
+            <p>
+                The system detects prohibited object classes
+                from uploaded X-ray baggage images.
+            </p>
+
+            <div class="feature-line"></div>
+
+        </div>
+
+
+        <div class="pro-feature-card"
+             data-aos="fade-up"
+             data-aos-delay="200">
+
+            <div class="feature-number">
+                03
+            </div>
+
+            <div class="pro-feature-icon">
+                <i class="fa-solid fa-chart-column"></i>
+            </div>
+
+            <h3>
+                Model Analytics
+            </h3>
+
+            <p>
+                Compare evaluated YOLO models through an
+                interactive performance analytics dashboard.
+            </p>
+
+            <div class="feature-line"></div>
+
+        </div>
+
+
+        <div class="pro-feature-card"
+             data-aos="fade-up"
+             data-aos-delay="300">
+
+            <div class="feature-number">
+                04
+            </div>
+
+            <div class="pro-feature-icon">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+            </div>
+
+            <h3>
+                Detection History
+            </h3>
+
+            <p>
+                Previous detection records are stored and
+                accessible through the detection history page.
+            </p>
+
+            <div class="feature-line"></div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     STATISTICS
+===================================================== -->
+
+<section class="pro-stats">
+
+    <div class="pro-stat-card">
+
+        <div class="stat-icon">
+            <i class="fa-solid fa-cubes"></i>
+        </div>
+
+        <div>
+            <h2>4</h2>
+            <span>YOLO Models</span>
+        </div>
+
+    </div>
+
+
+    <div class="pro-stat-card">
+
+        <div class="stat-icon">
+            <i class="fa-solid fa-layer-group"></i>
+        </div>
+
+        <div>
+            <h2>12</h2>
+            <span>Object Classes</span>
+        </div>
+
+    </div>
+
+
+    <div class="pro-stat-card">
+
+        <div class="stat-icon">
+            <i class="fa-solid fa-bullseye"></i>
+        </div>
+
+        <div>
+            <h2>93.56%</h2>
+            <span>Best mAP@50</span>
+        </div>
+
+    </div>
+
+
+    <div class="pro-stat-card">
+
+        <div class="stat-icon">
+            <i class="fa-solid fa-gauge-high"></i>
+        </div>
+
+        <div>
+            <h2>2.2 ms</h2>
+            <span>Fastest Inference</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     WORKFLOW
+===================================================== -->
+
+<section class="pro-workflow">
+
+    <div class="section-heading">
+
+        <span class="section-tag">
+            SYSTEM PIPELINE
+        </span>
+
+        <h2>
+            Detection Workflow
+        </h2>
+
+        <p>
+            From X-ray image upload to AI-powered object
+            detection and result analysis.
+        </p>
+
+    </div>
+
+
+    <div class="workflow-timeline">
+
+
+        <div class="timeline-step">
+
+            <div class="timeline-icon">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+            </div>
+
+            <span class="timeline-number">
+                01
+            </span>
+
+            <h3>
+                Upload X-ray
+            </h3>
+
+            <p>
+                Upload an airport baggage X-ray image
+                through the detection interface.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-connector">
+
+            <div class="connector-line"></div>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </div>
+
+
+        <div class="timeline-step">
+
+            <div class="timeline-icon">
+                <i class="fa-solid fa-microchip"></i>
+            </div>
+
+            <span class="timeline-number">
+                02
+            </span>
+
+            <h3>
+                AI Processing
+            </h3>
+
+            <p>
+                The YOLO model processes the uploaded
+                X-ray baggage image.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-connector">
+
+            <div class="connector-line"></div>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </div>
+
+
+        <div class="timeline-step">
+
+            <div class="timeline-icon">
+                <i class="fa-solid fa-crosshairs"></i>
+            </div>
+
+            <span class="timeline-number">
+                03
+            </span>
+
+            <h3>
+                Detection
+            </h3>
+
+            <p>
+                Detected objects and confidence
+                information are extracted.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-connector">
+
+            <div class="connector-line"></div>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </div>
+
+
+        <div class="timeline-step">
+
+            <div class="timeline-icon">
+                <i class="fa-solid fa-chart-line"></i>
+            </div>
+
+            <span class="timeline-number">
+                04
+            </span>
+
+            <h3>
+                Results
+            </h3>
+
+            <p>
+                Review detection results and access
+                previous activity through History.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="home-cta">
+
+    <div class="cta-glow"></div>
+
+    <div class="cta-content">
+
+        <span class="section-tag">
+            AI SECURITY SCREENING
+        </span>
+
+        <h2>
+            Ready to Analyze an X-ray Image?
+        </h2>
+
+        <p>
+            Open the detection interface and run the
+            trained YOLO model on an X-ray baggage image.
+        </p>
+
+    </div>
+
+    <a href="/detection"
+       class="pro-btn-primary">
+
+        <i class="fa-solid fa-play"></i>
+
+        Start Detection
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+    </a>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer class="home-footer">
+
+    <div class="footer-glow"></div>
+
+    <div class="footer-container">
+
+        <!-- LEFT: BRAND -->
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+                <i class="fa-solid fa-plane"></i>
+                <span>Airport Security AI</span>
+            </div>
+
+            <p>
+                Deep Learning Based X-ray Contraband Detection System
+            </p>
+
+        </div>
+
+
+        <!-- CENTER: TECHNOLOGY -->
+
+        <div class="footer-tech">
+
+            <span>
+                <i class="fa-solid fa-microchip"></i>
+                AI Powered
+            </span>
+
+            <span>
+                <i class="fa-solid fa-eye"></i>
+                Computer Vision
+            </span>
+
+            <span>
+                <i class="fa-solid fa-shield-halved"></i>
+                Security Research
+            </span>
+
+        </div>
+
+
+        <!-- RIGHT: SYSTEM STATUS -->
+
+        <div class="footer-status">
+
+            <span class="footer-status-dot"></span>
+
+            <span>
+                System Online
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Airport Security AI
+        </span>
+
+        <span class="footer-divider"></span>
+
+        <span>
+            Deep Learning Research Project
+        </span>
+
+    </div>
+
+</footer>
+
+{% endblock %}

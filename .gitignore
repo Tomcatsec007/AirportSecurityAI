@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Flask
+instance/
+.flaskenv
+
+# YOLO generated outputs
+runs/
+outputs/
+
+# Temporary uploaded/result images
+static/uploads/*
+static/results/*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Large AI model files
+*.pt
+*.pth
+*.onnx

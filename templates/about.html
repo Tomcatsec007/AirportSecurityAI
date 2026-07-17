@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About | Airport Security AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="navbar">
+
+    <div class="nav-links">
+
+        <a href="{{ url_for('home') }}">
+            Home
+        </a>
+
+        <a href="{{ url_for('about') }}">
+            About
+        </a>
+
+        <a href="{{ url_for('analytics') }}" class="active">
+            Analytics
+        </a>
+
+        <a href="{{ url_for('detection') }}">
+            Detection
+        </a>
+
+        <a href="{{ url_for('history') }}">
+            History
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="about-container">
+
+
+    <!-- =================================================
+         ABOUT HERO
+    ================================================== -->
+
+    <section class="about-hero">
+
+        <div class="about-hero-content">
+
+            <span class="about-eyebrow">
+                ABOUT THE PLATFORM
+            </span>
+
+            <h1>
+                Intelligent X-ray
+                <span>Contraband Detection</span>
+            </h1>
+
+            <p>
+                Airport Security AI is an intelligent X-ray baggage
+                screening platform designed for automatic detection
+                of prohibited objects using custom-trained YOLO
+                object detection models.
+            </p>
+
+            <div class="about-hero-tags">
+
+                <span>Computer Vision</span>
+
+                <span>Object Detection</span>
+
+                <span>X-ray Screening</span>
+
+                <span>YOLO</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="about-hero-visual">
+
+            <div class="about-ai-orbit">
+
+                <div class="orbit-ring orbit-one"></div>
+
+                <div class="orbit-ring orbit-two"></div>
+
+                <div class="about-ai-core">
+                    AI
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         PROJECT OVERVIEW
+    ================================================== -->
+
+    <section class="about-section">
+
+        <div class="about-section-heading">
+
+            <span class="section-eyebrow">
+                PROJECT OVERVIEW
+            </span>
+
+            <h2>
+                AI-Powered Security Screening
+            </h2>
+
+            <p>
+                The platform combines deep learning object detection
+                with an interactive web application for X-ray baggage
+                image analysis.
+            </p>
+
+        </div>
+
+
+        <div class="about-overview-grid">
+
+
+            <div class="about-feature-card">
+
+                <div class="about-feature-icon">
+                    ◈
+                </div>
+
+                <h3>
+                    X-ray Image Analysis
+                </h3>
+
+                <p>
+                    Users can upload baggage X-ray images for
+                    automatic prohibited-object detection.
+                </p>
+
+            </div>
+
+
+            <div class="about-feature-card">
+
+                <div class="about-feature-icon">
+                    ◎
+                </div>
+
+                <h3>
+                    Object Detection
+                </h3>
+
+                <p>
+                    The system uses a trained YOLO detection model
+                    to locate and classify detected objects.
+                </p>
+
+            </div>
+
+
+            <div class="about-feature-card">
+
+                <div class="about-feature-icon">
+                    ◇
+                </div>
+
+                <h3>
+                    Model Analytics
+                </h3>
+
+                <p>
+                    The Analytics dashboard provides performance
+                    comparisons across the evaluated YOLO models.
+                </p>
+
+            </div>
+
+
+            <div class="about-feature-card">
+
+                <div class="about-feature-icon">
+                    ◫
+                </div>
+
+                <h3>
+                    Detection History
+                </h3>
+
+                <p>
+                    Detection results are recorded so previous
+                    screening activity can be reviewed.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         DETECTION CLASSES
+    ================================================== -->
+
+    <section class="about-section">
+
+        <div class="about-section-heading">
+
+            <span class="section-eyebrow">
+                DETECTION CAPABILITIES
+            </span>
+
+            <h2>
+                12 Prohibited Object Classes
+            </h2>
+
+            <p>
+                The detection system is configured for the following
+                object categories.
+            </p>
+
+        </div>
+
+
+        <div class="class-grid">
+
+            <div class="class-card">
+                <span>01</span>
+                Baton
+            </div>
+
+            <div class="class-card">
+                <span>02</span>
+                Pliers
+            </div>
+
+            <div class="class-card">
+                <span>03</span>
+                Hammer
+            </div>
+
+            <div class="class-card">
+                <span>04</span>
+                Powerbank
+            </div>
+
+            <div class="class-card">
+                <span>05</span>
+                Scissors
+            </div>
+
+            <div class="class-card">
+                <span>06</span>
+                Wrench
+            </div>
+
+            <div class="class-card danger-class">
+                <span>07</span>
+                Gun
+            </div>
+
+            <div class="class-card danger-class">
+                <span>08</span>
+                Bullet
+            </div>
+
+            <div class="class-card">
+                <span>09</span>
+                Sprayer
+            </div>
+
+            <div class="class-card">
+                <span>10</span>
+                HandCuffs
+            </div>
+
+            <div class="class-card danger-class">
+                <span>11</span>
+                Knife
+            </div>
+
+            <div class="class-card">
+                <span>12</span>
+                Lighter
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         MODELS
+    ================================================== -->
+
+    <section class="about-section">
+
+        <div class="about-section-heading">
+
+            <span class="section-eyebrow">
+                MODEL BENCHMARKING
+            </span>
+
+            <h2>
+                Models Used in the Project
+            </h2>
+
+            <p>
+                Four YOLO object detection models were included
+                in the project benchmark.
+            </p>
+
+        </div>
+
+
+        <div class="about-model-grid">
+
+
+            <div class="about-model-card">
+
+                <span class="about-model-number">
+                    01
+                </span>
+
+                <div class="about-model-icon">
+                    ◈
+                </div>
+
+                <h3>
+                    YOLOv8n
+                </h3>
+
+                <p>
+                    Object Detection Model
+                </p>
+
+                <span class="about-model-status">
+                    ● Evaluated
+                </span>
+
+            </div>
+
+
+            <div class="about-model-card">
+
+                <span class="about-model-number">
+                    02
+                </span>
+
+                <div class="about-model-icon">
+                    ◈
+                </div>
+
+                <h3>
+                    YOLOv10n
+                </h3>
+
+                <p>
+                    Object Detection Model
+                </p>
+
+                <span class="about-model-status">
+                    ● Evaluated
+                </span>
+
+            </div>
+
+
+            <div class="about-model-card">
+
+                <span class="about-model-number">
+                    03
+                </span>
+
+                <div class="about-model-icon">
+                    ◈
+                </div>
+
+                <h3>
+                    YOLO11n
+                </h3>
+
+                <p>
+                    Object Detection Model
+                </p>
+
+                <span class="about-model-status">
+                    ● Evaluated
+                </span>
+
+            </div>
+
+
+            <div class="about-model-card">
+
+                <span class="about-model-number">
+                    04
+                </span>
+
+                <div class="about-model-icon">
+                    ◈
+                </div>
+
+                <h3>
+                    YOLO11s
+                </h3>
+
+                <p>
+                    Object Detection Model
+                </p>
+
+                <span class="about-model-status">
+                    ● Evaluated
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         SYSTEM WORKFLOW
+    ================================================== -->
+
+    <section class="about-section">
+
+        <div class="about-section-heading">
+
+            <span class="section-eyebrow">
+                SYSTEM PIPELINE
+            </span>
+
+            <h2>
+                How the Platform Works
+            </h2>
+
+            <p>
+                The web application processes an uploaded X-ray
+                image through a structured detection workflow.
+            </p>
+
+        </div>
+
+
+        <div class="workflow-container">
+
+
+            <div class="workflow-step">
+
+                <div class="workflow-number">
+                    01
+                </div>
+
+                <div>
+
+                    <h3>
+                        Upload
+                    </h3>
+
+                    <p>
+                        An X-ray baggage image is uploaded
+                        through the Detection interface.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="workflow-arrow">
+                →
+            </div>
+
+
+            <div class="workflow-step">
+
+                <div class="workflow-number">
+                    02
+                </div>
+
+                <div>
+
+                    <h3>
+                        AI Inference
+                    </h3>
+
+                    <p>
+                        The loaded YOLO model processes
+                        the uploaded X-ray image.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="workflow-arrow">
+                →
+            </div>
+
+
+            <div class="workflow-step">
+
+                <div class="workflow-number">
+                    03
+                </div>
+
+                <div>
+
+                    <h3>
+                        Detection
+                    </h3>
+
+                    <p>
+                        Detected objects and confidence
+                        information are extracted.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="workflow-arrow">
+                →
+            </div>
+
+
+            <div class="workflow-step">
+
+                <div class="workflow-number">
+                    04
+                </div>
+
+                <div>
+
+                    <h3>
+                        History
+                    </h3>
+
+                    <p>
+                        The detection result is stored
+                        in the detection history.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         TECHNOLOGY STACK
+    ================================================== -->
+
+    <section class="about-section">
+
+        <div class="about-section-heading">
+
+            <span class="section-eyebrow">
+                TECHNOLOGY
+            </span>
+
+            <h2>
+                Technology Stack
+            </h2>
+
+        </div>
+
+
+        <div class="technology-grid">
+
+
+            <div class="technology-card">
+
+                <span class="technology-label">
+                    LANGUAGE
+                </span>
+
+                <h3>
+                    Python
+                </h3>
+
+            </div>
+
+
+            <div class="technology-card">
+
+                <span class="technology-label">
+                    WEB FRAMEWORK
+                </span>
+
+                <h3>
+                    Flask
+                </h3>
+
+            </div>
+
+
+            <div class="technology-card">
+
+                <span class="technology-label">
+                    AI FRAMEWORK
+                </span>
+
+                <h3>
+                    Ultralytics
+                </h3>
+
+            </div>
+
+
+            <div class="technology-card">
+
+                <span class="technology-label">
+                    DETECTION
+                </span>
+
+                <h3>
+                    YOLO
+                </h3>
+
+            </div>
+
+
+            <div class="technology-card">
+
+                <span class="technology-label">
+                    FRONTEND
+                </span>
+
+                <h3>
+                    HTML / CSS
+                </h3>
+
+            </div>
+
+
+            <div class="technology-card">
+
+                <span class="technology-label">
+                    VISUALIZATION
+                </span>
+
+                <h3>
+                    Chart.js
+                </h3>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         PROJECT FOOTER MESSAGE
+    ================================================== -->
+
+    <section class="about-closing">
+
+        <div class="about-closing-icon">
+            ✈
+        </div>
+
+        <div>
+
+            <span>
+                AIRPORT SECURITY AI
+            </span>
+
+            <h2>
+                Intelligent X-ray Baggage Screening
+            </h2>
+
+            <p>
+                A deep-learning-based web application for prohibited
+                object detection in baggage X-ray images.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <p>
+        Airport Security AI • X-ray Contraband Detection System • 2026
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

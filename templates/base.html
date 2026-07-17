@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="AI Airport Security - Deep Learning Based X-ray Contraband Detection System"
+    >
+
+    <title>
+        {% block title %}
+        Airport Security AI
+        {% endblock %}
+    </title>
+
+
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
+
+    <link
+        rel="icon"
+        href="{{ url_for('static', filename='images/favicon.png') }}"
+    >
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         BOOTSTRAP
+    ====================================================== -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         AOS ANIMATION
+    ====================================================== -->
+
+    <link
+        href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         PROJECT CSS
+    ====================================================== -->
+
+    <!-- Global Styles -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+    <!-- Home Page -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/home.css') }}"
+    >
+
+    <!-- Detection Page -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/detection.css') }}"
+    >
+
+    <!-- Dashboard / Analytics -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/dashboard.css') }}"
+    >
+
+    <!-- Global Animations -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/animations.css') }}"
+    >
+
+    <!-- Responsive Styles -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/responsive.css') }}"
+    >
+
+
+    <!-- =====================================================
+         PAGE-SPECIFIC HEAD CONTENT
+    ====================================================== -->
+
+    {% block head %}
+    {% endblock %}
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         GLOBAL NAVBAR
+         This navbar appears automatically on every page.
+    ====================================================== -->
+
+    {% include "components/navbar.html" %}
+
+
+
+    <!-- =====================================================
+         MAIN PAGE CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+
+
+    <!-- =====================================================
+         BOOTSTRAP JAVASCRIPT
+    ====================================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+
+    <!-- =====================================================
+         GSAP ANIMATION
+    ====================================================== -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js">
+    </script>
+
+
+
+    <!-- =====================================================
+         AOS ANIMATION
+    ====================================================== -->
+
+    <script
+        src="https://unpkg.com/aos@2.3.4/dist/aos.js">
+    </script>
+
+
+    <script>
+
+        AOS.init({
+
+            duration: 900,
+
+            easing: "ease-out-cubic",
+
+            once: true,
+
+            offset: 50
+
+        });
+
+    </script>
+
+
+
+    <!-- =====================================================
+         GLOBAL PROJECT JAVASCRIPT
+    ====================================================== -->
+
+    <script
+        src="{{ url_for('static', filename='js/main.js') }}">
+    </script>
+
+
+    <script
+        src="{{ url_for('static', filename='js/glow.js') }}">
+    </script>
+
+
+    <script
+        src="{{ url_for('static', filename='js/particles.js') }}">
+    </script>
+
+
+
+    <!-- =====================================================
+         PAGE-SPECIFIC JAVASCRIPT
+    ====================================================== -->
+
+
+    <!-- Detection Page Only -->
+
+    {% if request.endpoint == "detection" %}
+
+        <script
+            src="{{ url_for('static', filename='js/detection.js') }}">
+        </script>
+
+    {% endif %}
+
+
+    <!-- Analytics Page Only -->
+
+    {% if request.endpoint == "analytics" %}
+
+        <script
+            src="{{ url_for('static', filename='js/dashboard.js') }}">
+        </script>
+
+    {% endif %}
+
+
+
+    <!-- =====================================================
+         CUSTOM PAGE SCRIPTS
+    ====================================================== -->
+
+    {% block scripts %}
+    {% endblock %}
+
+
+</body>
+
+</html>

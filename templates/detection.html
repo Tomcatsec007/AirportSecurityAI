@@ -1,0 +1,824 @@
+{% extends "base.html" %}
+
+{% block title %}
+X-ray Contraband Detection | Airport Security AI
+{% endblock %}
+
+{% block content %}
+
+<section class="detection-page">
+
+    <!-- =====================================================
+         PAGE HEADER
+    ====================================================== -->
+
+    <div class="detection-header" data-aos="fade-up">
+
+        <div class="detection-badge">
+            <span class="badge-pulse"></span>
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>AI SECURITY SCANNER</span>
+        </div>
+
+        <h1>
+            X-ray Contraband
+            <span>Detection</span>
+        </h1>
+
+        <p>
+            Upload an airport baggage X-ray image and let the AI automatically
+            detect prohibited objects.
+        </p>
+
+        <div class="scanner-ready-status">
+            <span class="scanner-status-dot"></span>
+            <span>Detection Engine Ready</span>
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MAIN DETECTION WORKSPACE
+    ====================================================== -->
+
+    <div class="detection-workspace">
+
+
+        <!-- =================================================
+             UPLOAD PANEL
+        ================================================== -->
+
+        <div class="upload-panel" data-aos="fade-right">
+
+            <div class="panel-heading">
+
+                <div class="panel-heading-left">
+
+                    <div class="panel-icon">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+
+                    <div>
+                        <span class="panel-label">INPUT</span>
+                        <h2>Upload Image</h2>
+                    </div>
+
+                </div>
+
+                <div class="panel-status">
+                    READY
+                </div>
+
+            </div>
+
+
+            <form
+                id="uploadForm"
+                action="{{ url_for('detect') }}"
+                method="POST"
+                enctype="multipart/form-data"
+            >
+
+                <!-- Upload Drop Zone -->
+
+                <label class="upload-box" id="uploadBox">
+
+                    <input
+                        type="file"
+                        id="imageInput"
+                        name="image"
+                        accept="image/*"
+                        hidden
+                        required
+                    >
+
+                    <div class="upload-glow"></div>
+
+                    <div class="upload-icon-wrapper">
+
+                        <i class="fa-solid fa-image"></i>
+
+                    </div>
+
+                    <h3>Drag & Drop Image</h3>
+
+                    <p>
+                        or click to browse
+                    </p>
+
+                    <span class="upload-format">
+                        X-ray baggage image
+                    </span>
+
+                </label>
+
+
+                <!-- Selected File -->
+
+                <div class="selected-file" id="selectedFile">
+
+                    <i class="fa-solid fa-file-image"></i>
+
+                    <div>
+                        <span>Selected Image</span>
+                        <strong id="fileName">
+                            No file selected
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <!-- Buttons -->
+
+                <div class="button-group">
+
+                    <button
+                        type="submit"
+                        id="detectBtn"
+                        class="detect-btn"
+                    >
+
+                        <span class="detect-btn-content">
+
+                            <i class="fa-solid fa-crosshairs"></i>
+
+                            <span>
+                                Run AI Detection
+                            </span>
+
+                        </span>
+
+                        <span class="detect-btn-loading">
+
+                            <i class="fa-solid fa-spinner fa-spin"></i>
+
+                            Scanning...
+
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="reset"
+                        id="clearBtn"
+                        class="clear-btn"
+                    >
+
+                        <i class="fa-solid fa-trash-can"></i>
+
+                        Clear
+
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <!-- Engine Information -->
+
+            <div class="engine-info">
+
+                <div class="engine-info-item">
+
+                    <i class="fa-solid fa-microchip"></i>
+
+                    <div>
+                        <span>Detection Model</span>
+                        <strong>YOLO11n</strong>
+                    </div>
+
+                </div>
+
+                <div class="engine-divider"></div>
+
+                <div class="engine-info-item">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    <div>
+                        <span>Object Classes</span>
+                        <strong>12 Classes</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             VISUALIZATION AREA
+        ================================================== -->
+
+        <div class="visualization-area" data-aos="fade-left">
+
+
+            <!-- =============================================
+                 ORIGINAL IMAGE
+            ============================================== -->
+
+            <div class="image-card original-card">
+
+                <div class="image-card-header">
+
+                    <div>
+
+                        <span class="image-card-label">
+                            INPUT
+                        </span>
+
+                        <h2>
+                            Original Image
+                        </h2>
+
+                    </div>
+
+                    <div class="image-card-status">
+
+                        <span></span>
+
+                        {% if uploaded_image %}
+                            IMAGE LOADED
+                        {% else %}
+                            WAITING
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+
+                <div class="image-viewer">
+
+                    <div class="corner corner-tl"></div>
+                    <div class="corner corner-tr"></div>
+                    <div class="corner corner-bl"></div>
+                    <div class="corner corner-br"></div>
+
+
+                    {% if uploaded_image %}
+
+                        <img
+                            id="previewImage"
+                            src="{{ url_for('static', filename='uploads/' + uploaded_image) }}"
+                            alt="Original X-ray Image"
+                        >
+
+                        <div
+                            class="image-placeholder"
+                            id="previewPlaceholder"
+                            style="display:none;"
+                        >
+
+                            <div class="placeholder-icon">
+                                <i class="fa-solid fa-image"></i>
+                            </div>
+
+                            <h3>No Image Selected</h3>
+
+                            <p>
+                                Upload an X-ray image to begin
+                            </p>
+
+                        </div>
+
+                    {% else %}
+
+                        <div
+                            class="image-placeholder"
+                            id="previewPlaceholder"
+                        >
+
+                            <div class="placeholder-icon">
+                                <i class="fa-solid fa-image"></i>
+                            </div>
+
+                            <h3>No Image Selected</h3>
+
+                            <p>
+                                Upload an X-ray image to begin
+                            </p>
+
+                        </div>
+
+                        <img
+                            id="previewImage"
+                            style="display:none;"
+                            alt="Original X-ray Preview"
+                        >
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+
+            <!-- =============================================
+                 DETECTION RESULT
+            ============================================== -->
+
+            <div class="image-card result-card {% if result_image %}result-active{% endif %}">
+
+                <div class="image-card-header">
+
+                    <div>
+
+                        <span class="image-card-label">
+                            AI OUTPUT
+                        </span>
+
+                        <h2>
+                            Detection Result
+                        </h2>
+
+                    </div>
+
+
+                    <div class="image-card-status result-status">
+
+                        <span></span>
+
+                        {% if result_image %}
+                            ANALYSIS COMPLETE
+                        {% else %}
+                            STANDBY
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+
+                <div class="image-viewer result-viewer">
+
+                    <div class="corner corner-tl"></div>
+                    <div class="corner corner-tr"></div>
+                    <div class="corner corner-bl"></div>
+                    <div class="corner corner-br"></div>
+
+
+                    <!-- Animated Scanner -->
+
+                    <div class="scanner-line"></div>
+
+
+                    {% if result_image %}
+
+                        <img
+                            id="resultImage"
+                            src="{{ url_for('static', filename='results/' + result_image) }}"
+                            alt="AI Detection Result"
+                        >
+
+                        <div
+                            class="image-placeholder"
+                            id="resultPlaceholder"
+                            style="display:none;"
+                        >
+
+                            <div class="placeholder-icon target-icon">
+                                <i class="fa-solid fa-crosshairs"></i>
+                            </div>
+
+                            <h3>No Detection Yet</h3>
+
+                            <p>
+                                Run AI detection to analyze the image
+                            </p>
+
+                        </div>
+
+                    {% else %}
+
+                        <div
+                            class="image-placeholder"
+                            id="resultPlaceholder"
+                        >
+
+                            <div class="placeholder-icon target-icon">
+
+                                <div class="target-ring"></div>
+
+                                <i class="fa-solid fa-crosshairs"></i>
+
+                            </div>
+
+                            <h3>No Detection Yet</h3>
+
+                            <p>
+                                Run AI detection to analyze the image
+                            </p>
+
+                            <div class="standby-indicator">
+
+                                <span></span>
+
+                                AI Scanner Standby
+
+                            </div>
+
+                        </div>
+
+                        <img
+                            id="resultImage"
+                            style="display:none;"
+                            alt="AI Detection Result"
+                        >
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         THREAT SUMMARY
+    ====================================================== -->
+
+    <section
+        class="threat-summary"
+        data-aos="fade-up"
+    >
+
+        <div class="summary-header">
+
+            <div>
+
+                <span class="summary-label">
+                    ANALYSIS REPORT
+                </span>
+
+                <h2>
+                    Threat Summary
+                </h2>
+
+                <p>
+                    AI detection analysis and system performance information.
+                </p>
+
+            </div>
+
+
+            <div class="summary-system-status">
+
+                <span></span>
+
+                System Ready
+
+            </div>
+
+        </div>
+
+
+        <div class="summary-grid">
+
+
+            <!-- Detected Object -->
+
+            <div class="summary-item">
+
+                <div class="summary-icon object-icon">
+
+                    <i class="fa-solid fa-crosshairs"></i>
+
+                </div>
+
+                <div class="summary-content">
+
+                    <span>
+                        Detected Object
+                    </span>
+
+                    <strong>
+
+                        {{ detected_object if detected_object else "-" }}
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Confidence -->
+
+            <div class="summary-item">
+
+                <div class="summary-icon confidence-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </div>
+
+                <div class="summary-content">
+
+                    <span>
+                        Confidence
+                    </span>
+
+                    <strong>
+
+                        {{ confidence if confidence else "-" }}
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Threat Level -->
+
+            <div class="summary-item threat-item">
+
+                <div class="summary-icon threat-icon">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+                <div class="summary-content">
+
+                    <span>
+                        Threat Level
+                    </span>
+
+                    <strong
+                        class="
+                        {% if threat_level == 'HIGH' %}
+                            danger
+                        {% elif threat_level == 'SAFE' %}
+                            safe
+                        {% else %}
+                            waiting
+                        {% endif %}
+                        "
+                    >
+
+                        {{ threat_level if threat_level else "Waiting" }}
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Model -->
+
+            <div class="summary-item">
+
+                <div class="summary-icon model-icon">
+
+                    <i class="fa-solid fa-microchip"></i>
+
+                </div>
+
+                <div class="summary-content">
+
+                    <span>
+                        Detection Model
+                    </span>
+
+                    <strong>
+                        YOLO11n
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Inference -->
+
+            <div class="summary-item">
+
+                <div class="summary-icon inference-icon">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                </div>
+
+                <div class="summary-content">
+
+                    <span>
+                        Inference Time
+                    </span>
+
+                    <strong>
+
+                        {{ inference if inference else "--" }}
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Status -->
+
+            <div class="summary-item status-summary-item">
+
+                <div class="summary-icon status-icon">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                </div>
+
+                <div class="summary-content">
+
+                    <span>
+                        Analysis Status
+                    </span>
+
+                    <strong class="online">
+
+                        {% if detected_object %}
+                            Completed
+                        {% else %}
+                            Ready
+                        {% endif %}
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</section>
+
+{% endblock %}
+
+
+
+{% block scripts %}
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const imageInput = document.getElementById("imageInput");
+    const uploadBox = document.getElementById("uploadBox");
+    const previewImage = document.getElementById("previewImage");
+    const previewPlaceholder = document.getElementById("previewPlaceholder");
+    const selectedFile = document.getElementById("selectedFile");
+    const fileName = document.getElementById("fileName");
+    const uploadForm = document.getElementById("uploadForm");
+    const detectBtn = document.getElementById("detectBtn");
+    const clearBtn = document.getElementById("clearBtn");
+
+
+    /* =============================================
+       IMAGE PREVIEW
+    ============================================== */
+
+    if (imageInput) {
+
+        imageInput.addEventListener("change", function () {
+
+            const file = this.files[0];
+
+            if (!file) {
+                return;
+            }
+
+            fileName.textContent = file.name;
+
+            selectedFile.classList.add("active");
+
+            const reader = new FileReader();
+
+            reader.onload = function (event) {
+
+                previewImage.src = event.target.result;
+
+                previewImage.style.display = "block";
+
+                if (previewPlaceholder) {
+                    previewPlaceholder.style.display = "none";
+                }
+
+            };
+
+            reader.readAsDataURL(file);
+
+        });
+
+    }
+
+
+    /* =============================================
+       DRAG EFFECT
+    ============================================== */
+
+    if (uploadBox) {
+
+        ["dragenter", "dragover"].forEach(function (eventName) {
+
+            uploadBox.addEventListener(eventName, function (event) {
+
+                event.preventDefault();
+
+                uploadBox.classList.add("drag-active");
+
+            });
+
+        });
+
+
+        ["dragleave", "drop"].forEach(function (eventName) {
+
+            uploadBox.addEventListener(eventName, function (event) {
+
+                event.preventDefault();
+
+                uploadBox.classList.remove("drag-active");
+
+            });
+
+        });
+
+    }
+
+
+    /* =============================================
+       DETECTION LOADING STATE
+    ============================================== */
+
+    if (uploadForm) {
+
+        uploadForm.addEventListener("submit", function () {
+
+            if (imageInput.files.length > 0) {
+
+                detectBtn.classList.add("loading");
+
+                detectBtn.disabled = true;
+
+            }
+
+        });
+
+    }
+
+
+    /* =============================================
+       CLEAR
+    ============================================== */
+
+    if (clearBtn) {
+
+        clearBtn.addEventListener("click", function () {
+
+            if (previewImage) {
+
+                previewImage.src = "";
+
+                previewImage.style.display = "none";
+
+            }
+
+            if (previewPlaceholder) {
+
+                previewPlaceholder.style.display = "flex";
+
+            }
+
+            if (selectedFile) {
+
+                selectedFile.classList.remove("active");
+
+            }
+
+            if (fileName) {
+
+                fileName.textContent = "No file selected";
+
+            }
+
+        });
+
+    }
+
+});
+
+</script>
+
+{% endblock %}

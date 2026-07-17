@@ -1,0 +1,7 @@
+image,detected_object,confidence,threat_level,inference,datetime
+PID_xray_00023.jpg,Baton,93.72%,HIGH,44.29 ms,2026-07-17 16:56:53
+PID_xray_00079.jpg,Baton,93.95%,HIGH,40.69 ms,2026-07-17 16:57:07
+PID_xray_00087_aug5697.jpg,Baton,94.01%,HIGH,55.97 ms,2026-07-17 19:05:55
+PID_xray_00051.jpg,Baton,94.11%,HIGH,41.07 ms,2026-07-17 19:07:49
+PID_xray_00148.jpg,Baton,90.73%,HIGH,37.49 ms,2026-07-17 19:10:19
+SIX_P08892.jpg,Gun,87.90%,HIGH,34.99 ms,2026-07-17 19:13:29

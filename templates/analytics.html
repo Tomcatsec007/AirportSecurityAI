@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Analytics | Airport Security AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+
+<body>
+
+<!-- ======================================================
+     NAVIGATION BAR
+======================================================= -->
+
+<nav class="navbar">
+
+    <div class="nav-links">
+
+        <a href="{{ url_for('home') }}">
+            Home
+        </a>
+
+        <a href="{{ url_for('about') }}">
+            About
+        </a>
+
+        <a href="{{ url_for('analytics') }}" class="active">
+            Analytics
+        </a>
+
+        <a href="{{ url_for('detection') }}">
+            Detection
+        </a>
+
+        <a href="{{ url_for('history') }}">
+            History
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- ======================================================
+     MAIN ANALYTICS CONTENT
+======================================================= -->
+
+<main class="analytics-container">
+
+
+    <!-- ==================================================
+         PAGE HEADER
+    =================================================== -->
+
+    <section class="analytics-header">
+
+        <div>
+
+            <span class="analytics-label">
+                PERFORMANCE INTELLIGENCE
+            </span>
+
+            <h1>
+                Model Performance Analytics
+            </h1>
+
+            <p>
+                Performance comparison of trained YOLO object detection
+                models evaluated for X-ray contraband detection.
+            </p>
+
+        </div>
+
+        <div class="analytics-header-badge">
+
+            <span class="badge-dot"></span>
+
+            4 Models Evaluated
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         SUMMARY CARDS
+    =================================================== -->
+    <!-- ==================================================
+     MODELS USED
+=================================================== -->
+
+<section class="models-section">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="section-eyebrow">
+                MODEL BENCHMARK SUITE
+            </span>
+
+            <h2>
+                Models Used in This Project
+            </h2>
+
+            <p>
+                Four YOLO object detection models were evaluated
+                for X-ray contraband detection.
+            </p>
+        </div>
+
+        <div class="model-count">
+            <span class="model-count-number">4</span>
+            <span class="model-count-text">Models</span>
+        </div>
+
+    </div>
+
+
+    <div class="models-grid">
+
+        <!-- YOLOv8n -->
+
+        <div class="model-card">
+
+            <div class="model-card-number">
+                01
+            </div>
+
+            <div class="model-card-icon">
+                ◈
+            </div>
+
+            <h3>YOLOv8n</h3>
+
+            <p>
+                Object Detection Model
+            </p>
+
+            <div class="model-card-footer">
+
+                <span class="model-type">
+                    YOLO
+                </span>
+
+                <span class="model-status">
+                    ● Evaluated
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- YOLOv10n -->
+
+        <div class="model-card">
+
+            <div class="model-card-number">
+                02
+            </div>
+
+            <div class="model-card-icon">
+                ◈
+            </div>
+
+            <h3>YOLOv10n</h3>
+
+            <p>
+                Object Detection Model
+            </p>
+
+            <div class="model-card-footer">
+
+                <span class="model-type">
+                    YOLO
+                </span>
+
+                <span class="model-status">
+                    ● Evaluated
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- YOLO11n -->
+
+        <div class="model-card">
+
+            <div class="model-card-number">
+                03
+            </div>
+
+            <div class="model-card-icon">
+                ◈
+            </div>
+
+            <h3>YOLO11n</h3>
+
+            <p>
+                Object Detection Model
+            </p>
+
+            <div class="model-card-footer">
+
+                <span class="model-type">
+                    YOLO
+                </span>
+
+                <span class="model-status">
+                    ● Evaluated
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- YOLO11s -->
+
+        <div class="model-card">
+
+            <div class="model-card-number">
+                04
+            </div>
+
+            <div class="model-card-icon">
+                ◈
+            </div>
+
+            <h3>YOLO11s</h3>
+
+            <p>
+                Object Detection Model
+            </p>
+
+            <div class="model-card-footer">
+
+                <span class="model-type">
+                    YOLO
+                </span>
+
+                <span class="model-status">
+                    ● Evaluated
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+    <section class="analytics-summary-grid">
+
+        <div class="analytics-card">
+
+            <div class="analytics-card-top">
+
+                <span class="analytics-card-icon">
+                    ⚡
+                </span>
+
+                <span class="card-tag">
+                    SPEED
+                </span>
+
+            </div>
+
+            <h2>2.2 ms</h2>
+
+            <p>Fastest Inference</p>
+
+            <span class="model-name">
+                YOLOv8n
+            </span>
+
+        </div>
+        
+
+
+        <div class="analytics-card">
+
+            <div class="analytics-card-top">
+
+                <span class="analytics-card-icon">
+                    📡
+                </span>
+
+                <span class="card-tag">
+                    RECALL
+                </span>
+
+            </div>
+
+            <h2>88.93%</h2>
+
+            <p>Best Recall</p>
+
+            <span class="model-name">
+                YOLO11s
+            </span>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <div class="analytics-card-top">
+
+                <span class="analytics-card-icon">
+                    🏆
+                </span>
+
+                <span class="card-tag">
+                    MAP@50
+                </span>
+
+            </div>
+
+            <h2>93.56%</h2>
+
+            <p>Best mAP@50</p>
+
+            <span class="model-name">
+                YOLO11s
+            </span>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <div class="analytics-card-top">
+
+                <span class="analytics-card-icon">
+                    🎯
+                </span>
+
+                <span class="card-tag">
+                    PRECISION
+                </span>
+
+            </div>
+
+            <h2>95.24%</h2>
+
+            <p>Best Precision</p>
+
+            <span class="model-name">
+                YOLO11s
+            </span>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ==================================================
+         MODEL PERFORMANCE
+    =================================================== -->
+
+    <section class="analytics-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-eyebrow">
+                    MODEL COMPARISON
+                </span>
+
+                <h2>
+                    Detection Performance
+                </h2>
+
+                <p>
+                    Comparison of Precision, Recall and mAP@50
+                    across the evaluated models.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="analytics-chart-grid">
+
+
+            <!-- PRECISION & RECALL CHART -->
+
+            <div class="chart-card">
+
+                <div class="chart-card-header">
+
+                    <div>
+
+                        <h3>
+                            Precision & Recall
+                        </h3>
+
+                        <p>
+                            Detection performance comparison
+                        </p>
+
+                    </div>
+
+                    <span class="chart-badge">
+                        Performance
+                    </span>
+
+                </div>
+
+                <div class="chart-wrapper">
+
+                    <canvas id="precisionRecallChart"></canvas>
+
+                </div>
+
+            </div>
+
+
+            <!-- MAP CHART -->
+
+            <div class="chart-card">
+
+                <div class="chart-card-header">
+
+                    <div>
+
+                        <h3>
+                            mAP@50 Performance
+                        </h3>
+
+                        <p>
+                            Mean Average Precision comparison
+                        </p>
+
+                    </div>
+
+                    <span class="chart-badge">
+                        Accuracy
+                    </span>
+
+                </div>
+
+                <div class="chart-wrapper">
+
+                    <canvas id="mapChart"></canvas>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         INFERENCE SPEED
+    =================================================== -->
+
+    <section class="analytics-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-eyebrow">
+                    EFFICIENCY
+                </span>
+
+                <h2>
+                    Inference Performance
+                </h2>
+
+                <p>
+                    Comparison of reported inference time
+                    across the four evaluated models.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="chart-card chart-card-wide">
+
+            <div class="chart-card-header">
+
+                <div>
+
+                    <h3>
+                        Inference Time
+                    </h3>
+
+                    <p>
+                        Lower inference time indicates faster processing
+                    </p>
+
+                </div>
+
+                <span class="chart-badge">
+                    Milliseconds
+                </span>
+
+            </div>
+
+
+            <div class="chart-wrapper wide-chart">
+
+                <canvas id="inferenceChart"></canvas>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         BENCHMARK TABLE
+    =================================================== -->
+
+    <section class="analytics-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-eyebrow">
+                    BENCHMARK
+                </span>
+
+                <h2>
+                    Detailed Model Comparison
+                </h2>
+
+                <p>
+                    Summary of the benchmark values displayed
+                    in the analytics dashboard.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="benchmark-table-container">
+
+            <table class="benchmark-table">
+
+                <thead>
+
+                <tr>
+
+                    <th>Model</th>
+
+                    <th>Precision</th>
+
+                    <th>Recall</th>
+
+                    <th>mAP@50</th>
+
+                    <th>Inference</th>
+
+                    <th>Status</th>
+
+                </tr>
+
+                </thead>
+
+
+                <tbody>
+
+
+                <tr>
+
+                    <td>
+                        <span class="table-model">
+                            YOLOv8n
+                        </span>
+                    </td>
+
+                    <td>0.9330</td>
+
+                    <td>0.8630</td>
+
+                    <td>0.9130</td>
+
+                    <td>2.2 ms</td>
+
+                    <td>
+                        <span class="speed-badge">
+                            Fastest
+                        </span>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        <span class="table-model">
+                            YOLOv10n
+                        </span>
+                    </td>
+
+                    <td>0.9163</td>
+
+                    <td>0.8615</td>
+
+                    <td>0.9086</td>
+
+                    <td>2.4 ms</td>
+
+                    <td>
+                        <span class="normal-badge">
+                            Evaluated
+                        </span>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        <span class="table-model">
+                            YOLO11n
+                        </span>
+                    </td>
+
+                    <td>0.9374</td>
+
+                    <td>0.8702</td>
+
+                    <td>0.9197</td>
+
+                    <td>2.4 ms</td>
+
+                    <td>
+                        <span class="normal-badge">
+                            Evaluated
+                        </span>
+                    </td>
+
+                </tr>
+
+
+                <tr class="best-model-row">
+
+                    <td>
+
+                        <span class="table-model">
+                            YOLO11s
+                        </span>
+
+                        <span class="best-label">
+                            BEST
+                        </span>
+
+                    </td>
+
+                    <td>0.9524</td>
+
+                    <td>0.8893</td>
+
+                    <td>0.9356</td>
+
+                    <td>4.6 ms</td>
+
+                    <td>
+
+                        <span class="best-badge">
+                            Top Accuracy
+                        </span>
+
+                    </td>
+
+                </tr>
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         ANALYTICS INSIGHT
+    =================================================== -->
+
+    <section class="analytics-insight">
+
+        <div class="insight-icon">
+            💡
+        </div>
+
+        <div>
+
+            <h3>
+                Performance Insight
+            </h3>
+
+            <p>
+                Based on the benchmark values displayed on this page,
+                YOLO11s has the highest Precision, Recall and mAP@50,
+                while YOLOv8n has the lowest reported inference time.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- ======================================================
+     FOOTER
+======================================================= -->
+
+<footer class="analytics-footer">
+
+    <p>
+        Airport Security AI
+        <span>•</span>
+        Model Performance Analytics
+        <span>•</span>
+        2026
+    </p>
+
+</footer>
+
+
+<!-- ======================================================
+     CHART.JS
+======================================================= -->
+
+<script>
+
+
+// =====================================================
+// GLOBAL CHART SETTINGS
+// =====================================================
+
+Chart.defaults.color = "#94a3b8";
+
+Chart.defaults.font.family =
+    "Inter, Arial, sans-serif";
+
+
+// =====================================================
+// MODEL DATA
+// =====================================================
+
+const models = [
+    "YOLOv8n",
+    "YOLOv10n",
+    "YOLO11n",
+    "YOLO11s"
+];
+
+
+// =====================================================
+// PRECISION & RECALL
+// =====================================================
+
+new Chart(
+
+    document.getElementById(
+        "precisionRecallChart"
+    ),
+
+    {
+
+        type: "bar",
+
+        data: {
+
+            labels: models,
+
+            datasets: [
+
+                {
+
+                    label: "Precision",
+
+                    data: [
+                        0.9330,
+                        0.9163,
+                        0.9374,
+                        0.9524
+                    ],
+
+                    backgroundColor:
+                        "rgba(56, 189, 248, 0.75)",
+
+                    borderRadius: 7
+
+                },
+
+                {
+
+                    label: "Recall",
+
+                    data: [
+                        0.8630,
+                        0.8615,
+                        0.8702,
+                        0.8893
+                    ],
+
+                    backgroundColor:
+                        "rgba(99, 102, 241, 0.75)",
+
+                    borderRadius: 7
+
+                }
+
+            ]
+
+        },
+
+
+        options: {
+
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            scales: {
+
+                y: {
+
+                    beginAtZero: false,
+
+                    min: 0.8,
+
+                    max: 1.0,
+
+                    grid: {
+
+                        color:
+                            "rgba(148,163,184,0.08)"
+
+                    }
+
+                },
+
+                x: {
+
+                    grid: {
+
+                        display: false
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+);
+
+
+// =====================================================
+// MAP@50
+// =====================================================
+
+new Chart(
+
+    document.getElementById(
+        "mapChart"
+    ),
+
+    {
+
+        type: "line",
+
+        data: {
+
+            labels: models,
+
+            datasets: [
+
+                {
+
+                    label: "mAP@50",
+
+                    data: [
+                        0.9130,
+                        0.9086,
+                        0.9197,
+                        0.9356
+                    ],
+
+                    borderColor:
+                        "#22c55e",
+
+                    backgroundColor:
+                        "rgba(34,197,94,0.12)",
+
+                    pointBackgroundColor:
+                        "#22c55e",
+
+                    pointRadius: 6,
+
+                    pointHoverRadius: 8,
+
+                    borderWidth: 3,
+
+                    tension: 0.35,
+
+                    fill: true
+
+                }
+
+            ]
+
+        },
+
+
+        options: {
+
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            scales: {
+
+                y: {
+
+                    beginAtZero: false,
+
+                    min: 0.88,
+
+                    max: 0.96,
+
+                    grid: {
+
+                        color:
+                            "rgba(148,163,184,0.08)"
+
+                    }
+
+                },
+
+                x: {
+
+                    grid: {
+
+                        display: false
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+);
+
+
+// =====================================================
+// INFERENCE TIME
+// =====================================================
+
+new Chart(
+
+    document.getElementById(
+        "inferenceChart"
+    ),
+
+    {
+
+        type: "bar",
+
+        data: {
+
+            labels: models,
+
+            datasets: [
+
+                {
+
+                    label:
+                        "Inference Time (ms)",
+
+                    data: [
+                        2.2,
+                        2.4,
+                        2.4,
+                        4.6
+                    ],
+
+                    backgroundColor: [
+
+                        "rgba(34,197,94,0.75)",
+
+                        "rgba(56,189,248,0.75)",
+
+                        "rgba(99,102,241,0.75)",
+
+                        "rgba(245,158,11,0.75)"
+
+                    ],
+
+                    borderRadius: 8
+
+                }
+
+            ]
+
+        },
+
+
+        options: {
+
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            plugins: {
+
+                legend: {
+
+                    display: false
+
+                }
+
+            },
+
+            scales: {
+
+                y: {
+
+                    beginAtZero: true,
+
+                    grid: {
+
+                        color:
+                            "rgba(148,163,184,0.08)"
+
+                    }
+
+                },
+
+                x: {
+
+                    grid: {
+
+                        display: false
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+);
+
+
+</script>
+
+
+</body>
+
+</html>
